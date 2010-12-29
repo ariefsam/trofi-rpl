@@ -1,67 +1,103 @@
-<script language="javascript" type="text/javascript" src="../class/tinymcpuk/tiny_mce.js"></script>
-<script language="javascript" type="text/javascript">
-	tinyMCE.init({
-		mode : "textareas",
-		theme : "advanced",
-		plugins : "table,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,zoom,flash,searchreplace,print,paste,directionality,fullscreen,noneditable,contextmenu",
-		theme_advanced_buttons1_add_before : "save,newdocument,separator",
-		theme_advanced_buttons1_add : "fontselect,fontsizeselect",
-		theme_advanced_buttons2_add : "separator,insertdate,inserttime,preview,zoom,separator,forecolor,backcolor,liststyle",
-		theme_advanced_buttons2_add_before: "cut,copy,paste,pastetext,pasteword,separator,search,replace,separator",
-		theme_advanced_buttons3_add_before : "tablecontrols,separator",
-		theme_advanced_buttons3_add : "emotions,iespell,flash,advhr,separator,print,separator,ltr,rtl,separator,fullscreen",
-		theme_advanced_toolbar_location : "top",
-		theme_advanced_toolbar_align : "left",
-		theme_advanced_statusbar_location : "bottom",
-		plugin_insertdate_dateFormat : "%Y-%m-%d",
-		plugin_insertdate_timeFormat : "%H:%M:%S",
-		extended_valid_elements : "hr[class|width|size|noshade]",
-		file_browser_callback : "fileBrowserCallBack",
-		paste_use_dialog : false,
-		theme_advanced_resizing : true,
-		theme_advanced_resize_horizontal : false,
-		theme_advanced_link_targets : "_something=My somthing;_something2=My somthing2;_something3=My somthing3;",
-		apply_source_formatting : true
-	});
-
-	function fileBrowserCallBack(field_name, url, type, win) {
-		var connector = "../../filemanager/browser.html?Connector=connectors/php/connector.php";
-		var enableAutoTypeSelection = true;
-
-		var cType;
-		tinymcpuk_field = field_name;
-		tinymcpuk = win;
-
-		switch (type) {
-			case "image":
-				cType = "Image";
-				break;
-			case "flash":
-				cType = "Flash";
-				break;
-			case "file":
-				cType = "File";
-				break;
-		}
-
-		if (enableAutoTypeSelection && cType) {
-			connector += "&Type=" + cType;
-		}
-
-		window.open(connector, "tinymcpuk", "modal,width=600,height=400");
-	}
-</script>
-
 <?php
-require "../class.php";
+session_start();
+require 'fungsi.php';
 require "../dbconfig.php";
-/*
-$halaman = new halaman();
-$tampilkan = $halaman->tampilkan();
-*/
-if (!$_GET['h']){
-    require "produk.php";
-}
-
-
-?>
+if(!loginkah()) header("Location: login.php");
+require "header.php";?>
+<div class="pad20">
+    <!-- Big buttons -->
+    <ul class="dash">
+        <li>
+            <a href="" title="Write a new article" class="tooltip">
+                <img src="index_files/8_48x480.png" alt="" />
+                <span>New article</span>
+            </a>
+        </li>
+        <li>
+            <a href="list.php" title="What your team posted" class="tooltip">
+                <img src="index_files/7_48x480.png" alt="" />
+                <span>Daftar Artikel</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Manage users and accounts" class="tooltip">
+                <img src="index_files/16_48x48.png" alt="" />
+                <span>Users</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Your site's statistics" class="tooltip">
+                <img src="index_files/4_48x480.png" alt="" />
+                <span>Statistics</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Bandwidth and traffic" class="tooltip">
+                <img src="index_files/14_48x48.png" alt="" />
+                <span>Bandwidth</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Server warnings" class="tooltip">
+                <img src="index_files/5_48x480.png" alt="" />
+                <span>Server warnings</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Manage downloads" class="tooltip">
+                <img src="index_files/3_48x480.png" alt="" />
+                <span>Downloads</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Lorem ipsum" class="tooltip">
+                <img src="index_files/9_48x480.png" alt="" />
+                <span>Listings</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Users' photo gallery" class="tooltip">
+                <img src="index_files/1_48x480.png" alt="" />
+                <span>Gallery</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="0 new messages" class="tooltip">
+                <img src="index_files/25_48x48.png" alt="" />
+                <span>Inbox</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Browse for files" class="tooltip">
+                <img src="index_files/21_48x48.png" alt="" />
+                <span>File browser</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Calculator" class="tooltip">
+                <img src="index_files/30_48x48.png" alt="" />
+                <span>Calculator</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="RSS Feeds" class="tooltip">
+                <img src="index_files/29_48x48.png" alt="" />
+                <span>Feeds</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Lorem ipsum" class="tooltip">
+                <img src="index_files/20_48x48.png" alt="" />
+                <span>Media</span>
+            </a>
+        </li>
+        <li>
+            <a href="" title="Lorem ipsum" class="tooltip">
+                <img src="index_files/26_48x48.png" alt="" />
+                <span>Latest comments</span>
+            </a>
+        </li>
+    </ul>
+    <!-- End of Big buttons -->
+</div>
+<?php require "footer.php"?>
