@@ -81,7 +81,7 @@ foreach($x as $z){
     </div>
 </div>
 <?php }
-}?>
+} if($_SESSION['id_member']) {?>
 Balas:
 <div>
     <form action="./?h=forum&s=r&id=<?php echo $this->id?>" method="POST">
@@ -91,7 +91,7 @@ Balas:
 </div>
 
 
-    <?php }
+    <?php } }
 }
 class tampilan_forum{
     public $state;
@@ -142,8 +142,8 @@ class tampilan_forum{
     </div>
 </div>
         
-    <?php } ?>
-<a href="./?h=forum&s=fb">Buat Thread Baru</a> <?php
+    <?php } if ($_SESSION['id_member']){ ?>
+<a href="./?h=forum&s=fb">Buat Thread Baru</a> <?php }
     }
 }
 }
