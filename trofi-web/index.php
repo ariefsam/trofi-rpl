@@ -110,5 +110,9 @@ else if($_GET['h']=="editiklan"){
     $halaman->konten->isi[0] = $iklan;
     }
 }
+else if($_GET['h']=="faq"){
+    $halaman->konten->isi[0]=new faq();
+    $halaman->header->activeMenu="faq";
+}
 $halaman->tampilkan();
 ?>
