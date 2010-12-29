@@ -1,0 +1,501 @@
+upbody{
+    background-color: #000;
+    width: 100%;
+}
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+body {
+	background:url(images/header.jpg) no-repeat top #FFFFFF;
+	/*margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;*/
+        margin: 0px auto;
+	text-align:center;
+        width: 1000px;
+}
+#wrapper{
+width:1000px;
+margin:0 auto;
+text-align:left;
+}
+#head{
+height:139px;
+width:100%;
+}
+#logo{
+float:left;
+padding-top:15px;
+padding-left:30px;
+}
+h1{
+background:url(images/logo.png) top left no-repeat;
+width:300px;
+height:100px;
+overflow:hidden;
+margin:0;
+}
+h1 a:link, h1 a:hover, h1 a:visited{
+width:300px;
+height:100px;
+display:block;
+text-indent:-999px;
+}
+#nav{
+width:100%;
+padding-top:3px;
+}
+#nav ul {
+
+  margin:0;
+
+  font-size:13px;
+
+  padding:5px 50px 15px 0;
+
+  list-style:none;
+
+  font-weight:bold; 
+
+  }
+
+#nav li {
+
+  margin-right:10px;
+
+  text-align:center;
+
+  padding-top:10px;
+
+   display:inline;
+
+   float:left;
+
+  width:100px;
+
+  height:33px;
+
+  }
+
+#nav a {
+
+  text-decoration:none;
+
+  color:#fff;
+
+  }
+
+/* Commented Backslash Hack
+
+   hides rule from IE5-Mac \*/
+
+#nav a {float:none;}
+
+/* End IE5-Mac hack */
+
+#nav a:hover {
+
+  color:#fff;
+
+  text-decoration:underline;
+
+  }
+
+#nav #active {
+
+    background:url(images/tab_03.gif);
+
+width:100px;
+
+  height:33px;
+
+  }
+
+  #nav ul li.current_page_item{
+
+     background:url(images/tab_03.gif);
+
+width:100px;
+
+  height:33px;
+
+  }
+
+   #nav ul li.current_page_item a{
+
+   color:#0055A6;
+
+  }
+
+#nav #active a {
+
+  color:#0055A6;
+
+    width:100px;
+
+  height:33px;
+
+  text-decoration:underline;
+
+  padding-bottom:9px;
+
+  }
+  #mygallery{
+  position:relative;
+  width:1000px;
+  height:196px;
+  }
+  .contenthol{
+  height:196px;
+  width:1000px;
+  overflow:hidden;
+  top:0;left:0;
+  position:absolute;
+  }
+  .projecttitle{
+  padding:15px 0 0 10px;
+  font-size:18px;
+  width:350px;
+  color:#000;
+  }
+.projectdesc{
+width:350px;
+color:#666;
+line-height:18px;
+padding:30px 0 0 10px;
+}
+.projectdesc p{
+padding:0 0 10px 0; margin:0;
+}
+.clear{
+clear:both;
+}
+.projectdesc span a:link, .projectdesc span a:visited{
+display:block;
+position:absolute;
+bottom:10px;
+left:10px;
+background:url(images/livepreview.jpg) top left no-repeat;
+width:93px;
+height:26px;
+color:#333;
+font-weight:bold;
+text-align:center;
+padding-top:5px;
+text-decoration:none;
+}
+.projectdesc span a:hover{
+text-decoration:underline;
+}
+.preview{
+position:absolute;
+bottom:0;
+right:50px;
+width:500px;
+height:196px;
+}
+#next {
+position:absolute;
+bottom:60px;
+right:10px;
+}
+.con{
+  height:196px;
+  width:1000px;
+  overflow:hidden;
+}
+.inner{
+position:relative;
+width:1000px;
+height:196px;
+}
+h2{
+font-size:24px;
+color:#000;
+font-weight:normal;
+margin:30px 0 10px 0;
+padding:0 0 5px 0;
+border-bottom:1px dotted #ccc;
+}
+#lc{
+width:680px;
+padding:0 10px 20px 10px;
+float:left;
+}
+#lc p{
+margin:0;
+padding:0 0 10px;
+line-height:18px;
+}
+#rc {
+float:right;
+width:250px;
+margin:30px 0 30px 0;
+padding:0 20px 20px 20px;
+border-left:1px dotted #ccc;
+}
+#extrapanel{
+margin-top:30px;
+width:660px;
+background:url(images/extrapanel.gif) repeat-x top;
+height:102px;
+border:1px solid #ccc;
+
+}
+.panel{
+width:198px;
+height:97px;
+float:left;
+padding-left:10px;
+padding-right:10px;
+padding-top:5px;
+background:none;
+line-height:20px;}
+#moneyback{
+background:url(images/moneyback.gif) top right no-repeat;
+border-right:1px solid #ccc;
+}
+#onlinesupport{
+background:url(images/onlinesupport.gif) top right no-repeat;
+border-right:1px solid #ccc;
+}
+#clientarea{
+background:url(images/clientarea.gif) top right no-repeat;
+}
+a:link {
+	color: #0383f8;
+}
+a:visited {
+	color: #0383f8;
+}
+a:hover {
+	color: #d80c36;
+}
+a:active {
+	color: #0383f8;
+}
+.testimonial{
+margin:0 0 20px 0;
+background:#f1f1f1;
+border:1px dotted #ccc;
+padding:10px;
+color:#666;
+line-height:18px;
+}
+h3{
+font-size:18px;
+margin:0 0 10px 0px;
+font-weight:normal;
+color:#666;}
+h4{
+font-weight:bold;
+font-size:14px;
+margin:0 0 10px 0;
+color:#000;
+}
+#rc ul{
+padding:0;
+margin:0 0 20px 0;
+list-style:none;
+border-top:1px dotted #ccc;
+border-left:1px dotted #ccc;
+border-right:1px dotted #ccc;}
+#rc ul li{
+text-indent:20px;
+}
+#rc ul li a{
+display:block;
+padding:10px 0 10px 0;
+background:#f1f1f1;
+border-bottom:1px dotted #ccc;
+}
+#rc ul li a:hover{
+border-bottom:1px solid #ccc;
+background:#fff;
+}
+.imageleft {
+	position:relative;
+	margin:0 20px 10px 0;
+	float:left;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.imageright {
+	position:relative;
+	margin:0 0 10px 20px;
+	float:right;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.text {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:94%;
+	height:40px;
+	background:#fff;
+	padding-left:3%;
+	padding-right:3%;
+	padding-top:3px;
+	padding-bottom:3px;
+ filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+ -moz-opacity: 0.80; opacity:0.8;
+}
+#footer{
+width:100%;
+background:#f1f1f1;
+border-top:1px solid #ccc;
+padding:20px 0 20px 0;
+text-align:center;
+}
+#innerfoot{
+width:1000px;
+margin:0 auto;
+color:#666;
+text-indent:20px;
+text-align:left;
+}
+#tel{
+margin:45px 0 0 0;
+float:right;
+background:url(images/telbg.jpg) top right no-repeat;
+width:177px;
+height:31px;
+color:#fff;
+padding:8px 0 0 10px;
+font-weight:normal;
+font-size:18px;
+}
+.portmain{
+padding-bottom:20px;
+border-bottom:1px dotted #ccc;
+width:100%;
+padding-top:10px;
+margin-bottom:10px;
+filter: alpha(opacity=70);-moz-opacity:.70;opacity:.70;
+overflow:hidden;
+position:relative;
+}
+.portlink{
+position:absolute;
+top:0;
+left:0;
+height:500px;
+background:url(images/blank.gif) repeat;
+width:100%;
+}
+.portmain img{
+border:3px solid #ededed;
+float:left;
+}
+.portinfo{
+float:left;
+padding-left:10px;
+width:440px;
+margin:0;
+}
+.portinfo h3{
+color:#000;
+margin:0 0 10px 0;}
+.portinfo p{
+margin:0;
+padding:0;
+}
+#form{
+position:relative;
+}
+#form fieldset{
+border:none;
+}
+#form .contact{
+background:url(images/contact.jpg) top left no-repeat;
+width:65px;
+height:29px;
+display:block;
+outline:none;
+border:none;}
+#error {
+position:absolute; 
+width:200px;
+top:10px;
+right:30px;
+padding:5px 0 5px 5px;}
+#error ul{
+color:red;
+}
+#form input{
+width:200px;
+}
+#form textarea{
+width:300px;
+}
+#lc ul{
+padding-left:30px;
+line-height:22px;
+margin:10px 0 20px 0;
+}
+#lc ul li{
+padding-left:10px;
+}
+#lc .checklist{
+list-style:none;
+padding-left:10px;
+line-height:22px;
+margin:10px 0 20px 0;
+}
+#lc .checklist li{
+background:url(images/tick.jpg) left no-repeat;
+padding-left:30px;
+}
+.warning{
+    color: red;
+    font-size: larger;
+    width: 300px;
+    margin: 20px;
+}
+.iklan{
+    margin: 10px;
+    background-color: #B3D3E6;
+}
+.iklan .judul{
+    background-color: #d80c36;
+    font-family: fantasy;
+    font-size: larger;
+    font-weight: bold;
+    padding: 5px;
+}
+.iklan .isi{
+    font-size: medium;
+}
+.iklan .pengirim{
+
+}
+.iklan .tanggal{
+    
+}
+.thread{
+    background-color: bisque;
+    margin: 5px;    
+    font-size: larger;
+}
+.thread .judul{
+    padding: 10px;
+    background-color: #B3D3E6;
+}
+
+.thread .pengirim{
+    padding: 10px;
+    background-color: bisque;
+    display: inline-block;
+
+}
+.thread .tanggal{
+    background-color: bisque;
+    display: inline-block;
+    height: 100%;
+    float: right;
+
+}
