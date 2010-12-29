@@ -1,5 +1,5 @@
 <?php
-$aksi='admin/aksi_produk.php';
+$aksi='aksi_produk.php';
 switch($_GET[act]){
   // Tampil Produk
   default:
@@ -7,10 +7,6 @@ switch($_GET[act]){
           <input type=button value='Tambah Artikel' onclick=\"window.location.href='?module=halaman&act=tambahproduk';\">
           <table>
           <tr><th>no</th><th>Judul</th><th>aksi</th></tr>";
-
-    /*$p      = new Paging;
-    $batas  = 10;
-    $posisi = $p->cariPosisi($batas);*/
 
     $tampil = mysql_query("SELECT * FROM halaman");
   
@@ -25,13 +21,6 @@ switch($_GET[act]){
       $no++;
     }
     echo "</table>";
-/*
-   $jmldata = mysql_num_rows(mysql_query("SELECT * FROM halaman"));
-    $jmlhalaman  = $p->jumlahHalaman($jmldata, $batas);
-    $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
-
-    echo "<div id=paging>Hal: $linkHalaman</div><br>";
- */
     break;
   
   case "tambahproduk":
@@ -47,7 +36,7 @@ switch($_GET[act]){
               echo "<option value=$r[id]>$r[nama]</option>";
             }
     echo "</select></td></tr>
-          <tr><td>Isi Artikel</td>  <td> <textarea name='isi' style='width: 450px; height: 250px;'></textarea></td></tr>
+          <tr><td>Isi Artikel</td>  <td> <textarea name='isi' style='width: 600px; height: 300px;'></textarea></td></tr>
           <tr><td>Gambar</td>      <td> : <input type=file name='fupload' size=40> 
                                           <br>Tipe gambar harus JPG/JPEG dan ukuran lebar maks: 400 px</td></tr>
           <tr><td>Resume Gambar</td>     <td> : <input type=text name='resume_gambar' size=40></td></tr>
@@ -81,9 +70,9 @@ switch($_GET[act]){
             }
           }
     echo "</select></td></tr>
-          <tr><td>Isi Artikel</td>   <td> <textarea name='isi' style='width: 450px; height: 250px;'>$r[isi]</textarea></td></tr>
+          <tr><td>Isi Artikel</td>   <td> <textarea name='isi' style='width: 600px; height: 300px;'>$r[isi]</textarea></td></tr>
           <tr><td>Gambar</td>       <td> :  
-          <img src='./pictures/$r[gambar]'></td></tr>
+          <img src='../pictures/$r[gambar]'></td></tr>
           <tr><td>Resume Gambar</td>     <td> : <input type=text name='resume_gambar' value=$r[resume_gambar] size=40></td></tr>
           <tr><td>Ganti Gbr</td>    <td> : <input type=file name='fupload' size=30> *)</td></tr>
           <tr><td colspan=2>*) Apabila gambar tidak diubah, dikosongkan saja.</td></tr>
