@@ -112,7 +112,7 @@ else if($_GET['h']=="editiklan"){
 }
 else if($_GET['h']=="faq"){
     $halaman->konten->isi[0]=new faq();
-    $halaman->header->activeMenu="faq";
+    $halaman->header->activeMenu="FAQ";
 }
 $halaman->tampilkan();
 ?>
