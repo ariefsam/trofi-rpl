@@ -6,6 +6,7 @@ class artikel{
     public $isi;
     public $id;
     public $tanggal;
+    public $kategori;
     function artikel($id){
         $queri = mysql_query("SELECT * FROM halaman WHERE id=$id");
         $artikel = mysql_fetch_array($queri);
@@ -15,6 +16,7 @@ class artikel{
         $this->resume_gambar = $artikel['resume_gambar'];
         $this->id=$id;
         $this->tanggal = $artikel['tanggal'];
+        $this->kategori = $artikel['kategori'];
     }
     function tampilkan(){
         ?>

@@ -23,12 +23,21 @@ require "header.php"
             $artikel = get_semua_artikel(0);
             $i=1;
             foreach ($artikel as $a) {?>
-            <tr class="odd">
+            <tr class="<?php if($i%2==0) echo 'even'; else echo 'odd';?>">
                 <td><?php echo $i++?></td>
                 <td><?php echo $a['tanggal']?></td>
                 <td><?php echo $a['judul']?></td>
                 <td><?php echo get_kategori($a['kategori'])?></td>
-                <td></td>
+                <td width="60px">
+                    <ul class="ui-widget ui-helper-clearfix" id="icons">
+                    <li title="Edit" class="ui-state-default ui-corner-all">
+                        <a href="edit_artikel.php?id=<?php echo $a['id']?>"><span class="ui-icon ui-icon-pencil">&nbsp;</span></a>
+                    </li>
+                    <li title="Hapus" class="ui-state-default ui-corner-all">
+                        <a href="#"><span class="ui-icon ui-icon-closethick"></span></a>
+                    </li>
+                    </ul>
+                </td>
             </tr>
             <?php }?>
         </tbody>

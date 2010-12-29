@@ -7,6 +7,13 @@ function get_semua_artikel($halaman, $jumlah=30){
     }
     return $data;
 }
+function get_semua_kategori(){
+    $queri = mysql_query("select * from kategori");
+    while ($q = mysql_fetch_array($queri)){
+        $data[] = $q;
+    }
+    return $data;
+}
 function loginkah(){
     if ($_SESSION['admin']) return true;
     else return false;

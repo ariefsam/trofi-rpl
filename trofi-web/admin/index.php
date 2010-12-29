@@ -4,6 +4,8 @@ require 'fungsi.php';
 require "../dbconfig.php";
 if(!loginkah()) header("Location: login.php");
 require "header.php";?>
+<h1>Selamat datang, <span>Admin</span>!</h1>
+                        <p>Apa yang akan Anda lakukan?</p>
 <div class="pad20">
     <!-- Big buttons -->
     <ul class="dash">

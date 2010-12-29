@@ -52,7 +52,7 @@
                 <!-- The navigation bar -->
                 <div id="navbar">
                     <ul class="nav">
-                        <li><a href="">Home</a></li>
+                        <li><a href="./">Home</a></li>
                         <li><a href="">Artikel</a></li>
                         <li><a href="">User</a></li>
                     </ul>
@@ -70,5 +70,3 @@
                 <!-- Main Content -->
                 <div id="content">
                     <div id="main">
-                        <h1>Selamat datang, <span>Admin</span>!</h1>
-                        <p>Apa yang akan Anda lakukan?</p>
