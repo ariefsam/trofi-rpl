@@ -18,6 +18,7 @@ require "class/member.php";
 require "class/login.php";
 require "class/forum.php";
 require "class/faq.php";
+require "class/kebijakan_privasi.php";
 class database {
 
     public $queri;
