@@ -1,4 +1,5 @@
 <?php
+$title = "Admin::Trofi-Web";
 function get_semua_artikel($halaman, $jumlah=30){
     $mulai = $halaman * $jumlah;
     $queri = mysql_query("SELECT * FROM halaman limit $mulai,$jumlah");

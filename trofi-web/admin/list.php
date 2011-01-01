@@ -1,7 +1,7 @@
 <?php
 session_start();
-require 'fungsi.php';
 require "../dbconfig.php";
+require 'fungsi.php';
 if(!loginkah()) header("Location: login.php");
 require "header.php"
         ?>
@@ -34,7 +34,7 @@ require "header.php"
                         <a href="edit_artikel.php?id=<?php echo $a['id']?>"><span class="ui-icon ui-icon-pencil">&nbsp;</span></a>
                     </li>
                     <li title="Hapus" class="ui-state-default ui-corner-all">
-                        <a href="#"><span class="ui-icon ui-icon-closethick"></span></a>
+                        <a href="#" onclick="hapus(<?php echo $a['id']?>)"><span class="ui-icon ui-icon-closethick"></span></a>
                     </li>
                     </ul>
                 </td>

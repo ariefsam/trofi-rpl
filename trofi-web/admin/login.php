@@ -2,6 +2,7 @@
 session_start();
 require "fungsi.php";
 require "../dbconfig.php";
+if($_GET['action']=='logout') session_destroy();
 if($_POST['submit']){
     $login = login($_POST['username'], $_POST['password']);
     if ($login) header("Location: index.php");
