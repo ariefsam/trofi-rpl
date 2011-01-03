@@ -12,9 +12,11 @@ if (!$_GET['h']){
 }
 else if ($_GET['h']=="artikel"){
     require "halaman/artikel.php";
+    $halaman->header->judul = "Artikel::Trofi";
 }
 else if ($_GET['h']=="registrasi"){
     require "halaman/registrasi.php";
+    $halaman->headeer->judul = "Registrasi::Trofi";
 }
 else if ($_GET['h']=="isiartikel"){
     if ($_POST['kategori']){
@@ -33,11 +35,13 @@ else if ($_GET['h']=="isiartikel"){
     }
 }
 else if ($_GET['h']=="member"){
+    $halaman->header->judul = "Member Area::Trofi";
     $halaman->header->activeMenu = "member";
     if($_SESSION['id_member']) $halaman->konten->isi[0] = new member_area('id', $_SESSION['id_member']);
     else header("Location: ?h=login");
 }
 else if ($_GET['h']=="login"){
+    $halaman->header->judul = "Login::Trofi";
     $halaman->header->activeMenu = "member";
     if ($_SESSION['id_member']) header("Location: ?h=member");
     else $halaman->konten->isi[0] = new login();
@@ -57,6 +61,7 @@ else if ($_GET['h']=="logp"){
     }
 }
 else if($_GET['h']=="tambah_iklan"){
+    $halaman->header->judul = "Tulis Iklan::Trofi";
     $halaman->header->activeMenu = "iklan";
     $halaman->konten->isi[0]=new tambah_iklan();
 }
@@ -68,10 +73,12 @@ else if($_GET['h']=="iklanp"){
     header("Location: ?h=member");
 }
 else if($_GET['h']=="iklan"){
+    $halaman->header->judul = "Iklan::Trofi";
     $halaman->konten->isi[0] = new tampilkan_iklan();
     $halaman->header->activeMenu = "iklan";
 }
 else if($_GET['h']=="forum"){
+    $halaman->header->judul = "Forum::Trofi";
     $halaman->header->activeMenu = "forum";
     $forum = new forum();
     if($_GET['s']=="b"){        
@@ -79,6 +86,7 @@ else if($_GET['h']=="forum"){
         $isi = $_POST['isi'];
         $member = $_SESSION['id_member'];
         $forum->buat_thread($judul,$isi,$member);
+        header("Location: ./?h=forum");
     }
     else if($_GET['s']=='t'){
         $halaman->konten->isi[0] = new thread($_GET['id']);
@@ -100,6 +108,7 @@ else if($_GET['h']=="hpsiklan"){
     header("Location: ?h=member");
 }
 else if($_GET['h']=="editiklan"){
+    $halaman->header->judul = "Edit Iklan::Trofi";
     if($_POST['judul']){
        $iklan = new iklan($_POST['id']);
        $iklan->edit($_POST['judul'], $_POST['isi']);
@@ -111,11 +120,13 @@ else if($_GET['h']=="editiklan"){
     }
 }
 else if($_GET['h']=="faq"){
+    $halaman->header->judul = "FAQ::Trofi";
     $halaman->konten->isi[0]=new faq();
     $halaman->header->activeMenu="FAQ";
 }
 
 else if($_GET['h']=="about"){
+    $halaman->header->judul = "About::Trofi";
     $halaman->konten->isi[0]=new about();
     $halaman->header->activeMenu="about";
 }

@@ -60,7 +60,16 @@ class thread{
     </div>
 </div>
 <?php
-$x = new database("SELECT id FROM forum_content WHERE thread=" . $this->id);
+$queri = mysql_fetch_array(mysql_query("SELECT count(id) FROM forum_content WHERE thread=" . $this->id));
+$total_item = $queri[0];
+$jumlah_perhalaman = 20;
+$hal = $_GET['hal']-1;
+if(!$_GET['hal']) $hal=0;
+$mulai = $hal*$jumlah_perhalaman;
+$jumlah_halaman = ceil($total_item/$jumlah_perhalaman);
+$link = "./?h=forum&s=t&id=" . $this->id;
+$pagination = new pagination(($hal+1),$total_item,$jumlah_perhalaman,$link,"hal");
+$x = new database("SELECT id FROM forum_content WHERE thread=" . $this->id . " ORDER by id limit $mulai, $jumlah_perhalaman");
 $x = $x->getResult();
 if($x){
 foreach($x as $z){
@@ -81,7 +90,9 @@ foreach($x as $z){
     </div>
 </div>
 <?php }
-} if($_SESSION['id_member']) {?>
+}
+$pagination->tampilkan();
+if($_SESSION['id_member']) {?>
 Balas:
 <div>
     <form action="./?h=forum&s=r&id=<?php echo $this->id?>" method="POST">
@@ -125,7 +136,17 @@ class tampilan_forum{
         ?>
 <h2>Forum</h2>
         <?php
-        $queri = new database("SELECT id FROM forum_thread");
+        $queri = mysql_fetch_array(mysql_query("SELECT count(id) FROM forum_thread"));
+        $total_item = $queri[0];
+        $jumlah_perhalaman = 20;
+        $hal = $_GET['hal']-1;
+        if(!$_GET['hal']) $hal=0;
+        $mulai = $hal*$jumlah_perhalaman;
+        $jumlah_halaman = ceil($total_item/$jumlah_perhalaman);
+        $link = "./?h=forum";
+        $pagination = new pagination(($hal+1),$total_item,$jumlah_perhalaman,$link,"hal");
+
+        $queri = new database("SELECT id FROM forum_thread order by id desc limit $mulai, $jumlah_perhalaman");
         $q = $queri->getResult();
         foreach ($q as $t) {
         $thread = new thread($t['id']);?>
@@ -141,8 +162,14 @@ class tampilan_forum{
         <?php echo $thread->tanggal?>
     </div>
 </div>
+
         
-    <?php } if ($_SESSION['id_member']){ ?>
+    <?php } 
+    
+    $pagination->tampilkan();
+    if ($_SESSION['id_member']){ ?>
+    
+
 <a href="./?h=forum&s=fb">Buat Thread Baru</a> <?php }
     }
 }

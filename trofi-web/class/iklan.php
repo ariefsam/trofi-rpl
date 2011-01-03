@@ -50,8 +50,23 @@ class tampilkan_iklan{
     }
     function tampilkan(){
         $member = $this->value;
-    if($this->state=="semua") $queri = mysql_query("SELECT id FROM iklan order by id desc");
-    else if ($this->state=="member") $queri = mysql_query("SELECT id FROM iklan WHERE member=$member order by id desc"); ?>
+    if($this->state=="semua"){
+        $queri = mysql_fetch_array(mysql_query("SELECT count(id) FROM iklan"));
+        $total_item = $queri[0];
+        $jumlah_perhalaman = 20;
+        $hal = $_GET['hal']-1;
+        if(!$_GET['hal']) $hal=0;
+        $mulai = $hal*$jumlah_perhalaman;
+        $jumlah_halaman = ceil($total_item/$jumlah_perhalaman);
+        $link = "./?h=iklan";
+        $pagination = new pagination(($hal+1),$total_item,$jumlah_perhalaman,$link,"hal");
+        $queri = mysql_query("SELECT id FROM iklan order by id desc limit $mulai, $jumlah_perhalaman");
+    }
+    else if ($this->state=="member") {
+        $queri = mysql_query("SELECT id FROM iklan WHERE member=$member order by id desc");
+        $pagination = new html("&nbsp;");
+    }?>
+
 
 <h2><?php echo $this->judul?></h2>
 <?php
@@ -73,15 +88,24 @@ while($q = mysql_fetch_array($queri)){
     </div>
     <?php
     if($this->state=="member"){?>
-    <a href="./?h=hpsiklan&id=<?php echo $iklan->id?>">Hapus Iklan</a>
+    <a onclick="hapus(<?php echo $iklan->id?>); return false;" href="#">Hapus Iklan</a>
     <br />
     <a href="./?h=editiklan&id=<?php echo $iklan->id?>">Edit Iklan</a>
     <?php }
     ?>
 </div>
+<script type="text/javascript">
+    function hapus(id){
+        if(confirm('Yakin akan menghapus iklan ini? Iklan yang sudah dihapus tidak dapat dikembalikan')){
+            window.location = 'index.php?h=hpsiklan&id=' + id;
+        }
+    }
+</script>
 <?php }
 ?>
-    <?php }
+    <?php 
+    $pagination->tampilkan();
+    }
 }
 class tambah_iklan{
     function tampilkan(){?>
