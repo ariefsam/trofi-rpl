@@ -114,9 +114,14 @@ else if($_GET['h']=="faq"){
     $halaman->konten->isi[0]=new faq();
     $halaman->header->activeMenu="FAQ";
 }
-else if ($_GET['h']=="kebijakan_privasi"){
+
+else if($_GET['h']=="about"){
+    $halaman->konten->isi[0]=new about();
+    $halaman->header->activeMenu="about";
+}
+/*else if ($_GET['h']=="kebijakan_privasi"){
     $halaman->konten->isi[0] = new kebijakan_privasi();
     $halaman->header->activeMenu = "FAQ";
-}
+}*/
 $halaman->tampilkan();
 ?>
