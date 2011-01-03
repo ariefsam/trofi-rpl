@@ -23,7 +23,7 @@
     </head>
     <body>
         <!-- Container -->
-        <div id="container">
+        <div name="top" id="container">
 
             <!-- Header -->
             <div id="header">
@@ -32,7 +32,7 @@
                 <div id="top">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="" title="Administration Home" class="tooltip"><img src="index_files/logo0000.png" alt="Wide Admin" /></a>
+                        <a href="" title="Administration Home" class="tooltip"><img src="../images/logo.png" height="80px" alt="Wide Admin" /></a>
                     </div>
                     <!-- End of Logo -->
 
@@ -53,8 +53,10 @@
                 <div id="navbar">
                     <ul class="nav">
                         <li><a href="./">Home</a></li>
-                        <li><a href="">Artikel</a></li>
-                        <li><a href="">User</a></li>
+                        <li><a href="list.php">Artikel</a></li>
+                        <li><a href="user.php">Member</a></li>
+                        <li><a href="forum.php">Forum</a></li>
+                        <li><a href="iklan.php">Iklan</a></li>
                     </ul>
                 </div>
                 <!-- End of navigation bar" -->

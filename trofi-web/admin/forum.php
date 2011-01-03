@@ -3,38 +3,40 @@ session_start();
 require "../dbconfig.php";
 require 'fungsi.php';
 if(!loginkah()) header("Location: login.php");
-require "header.php"
+require "header.php";
+require "../class/member.php";
         ?>
 
 <div id="tabs-2">
-    <p>Daftar Artikel Terbaru</p>
+    <p>Daftar Forum</p>
     <table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>
                 <td>No</td>
-                <td>Tanggal</td>
+                <td>Member</td>
                 <td>Judul</td>
-                <td>Kategori</td>
-                <td></td>
+                <td>Cuplikan Isi</td>
+                <td>Tgl Pasang</td>
+                <td width="25px" style="width: 25px"></td>
             </tr>
         </thead>
         <tbody>
             <?php
-            $artikel = get_semua_artikel(0);
+            $artikel = get_semua_thread(0);
             $i=1;
             foreach ($artikel as $a) {?>
             <tr id="row<?php echo $a['id']?>" class="<?php if($i%2==0) echo 'even'; else echo 'odd';?>">
                 <td><?php echo $i++?></td>
+                <td>
+                    <?php $member = new member($a['ts']);
+                    echo $member->nama;?></td>
+                <td><a href="forum_konten.php?t=<?php echo $a['id']?>"><?php echo $a['judul']?></a></td>
+                <td><?php echo substr($a['isi'],0,100)?></td>
                 <td><?php echo $a['tanggal']?></td>
-                <td><?php echo $a['judul']?></td>
-                <td><?php echo get_kategori($a['kategori'])?></td>
                 <td width="60px">
                     <ul class="ui-widget ui-helper-clearfix" id="icons">
-                    <li title="Edit" class="ui-state-default ui-corner-all">
-                        <a href="edit_artikel.php?id=<?php echo $a['id']?>"><span class="ui-icon ui-icon-pencil">&nbsp;</span></a>
-                    </li>
                     <li title="Hapus" class="ui-state-default ui-corner-all">
-                        <a href="#" onclick="hapus(<?php echo $a['id']?>)"><span class="ui-icon ui-icon-closethick"></span></a>
+                        <span class="ui-icon ui-icon-closethick" onclick="hapus(<?php echo $a['id']?>)"></span>
                     </li>
                     </ul>
                 </td>
@@ -42,16 +44,16 @@ require "header.php"
             <?php }?>
         </tbody>
     </table>
-    
+
 
 </div>
 
 <!-- End of Main Content -->
 <script type="text/javascript">
     function hapus(id) {
-        if (confirm("Yakin akan menghapus artikel ini? Artikel yang sudah dihapus tidak akan dapat dikembalikan lagi.")) {
+        if (confirm("Yakin akan menghapus member ini? Data member yang sudah dihapus tidak akan dapat dikembalikan lagi.")) {
                 $.ajax({
-                        url: 'delete.php',
+                        url: 'delete_thread.php',
                         data: 'del=' + id,
                         success: function(data) {
                                 $('#row' + id).fadeOut('slow');
@@ -61,6 +63,5 @@ require "header.php"
                 });
         }
         }
-
 </script>
 <?php require "footer.php"?>

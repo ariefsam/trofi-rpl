@@ -2,28 +2,14 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Sidebar -->
+<?php /*<!-- Sidebar -->
 <div id="sidebar">
     <!-- Lists -->
     <h2>Lists / Navigation</h2>
     <ul>
-        <li><a href="">Lorem Ipsum</a></li>
-        <li><a href="">Artificial Intelligence</a></li>
-        <li><a href="">jQuery Power</a>
-            <ul>
-                <li><a href="">Lorem Ipsum</a></li>
-                <li><a href="">Artificial Intelligence</a></li>
-                <li><a href="">Lorem Ipsum</a>
-                    <ul>
-                        <li><a href="">Lorem Ipsum</a></li>
-                        <li><a href="">Artificial Intelligence</a></li>
-                        <li><a href="">Lorem Ipsum</a></li>
-                        <li class="last"><a href="">Artificial Intelligence</a></li>
-                    </ul>
-                </li>
-                <li class="last"><a href="">Artificial Intelligence</a></li>
-            </ul>
-        </li>
+        <li><a href="index.php">Home</a></li>
+        <li><a href="Artikel">Artikel</a></li>
+        <li><a href="User">User</a></li>
         <li><a href="">Another category</a></li>
     </ul>
     <!-- End of Lists -->
@@ -36,7 +22,7 @@
     <!-- End of Statistics -->
 
 </div>
-<!-- End of Sidebar -->
+<!-- End of Sidebar --> */?>
 
 </div>
 <!-- End of bgwrap -->
@@ -46,7 +32,10 @@
 <!-- Footer -->
 <div id="footer">
     <p class="mid">
-        <a href="" title="Top" class="tooltip">Top</a>&middot;<a href="" title="Main Page" class="tooltip">Home</a>&middot;<a href="" title="Change current settings" class="tooltip">Settings</a>&middot;<a href="" title="End administrator session" class="tooltip">Logout</a>
+        <a href="#top" title="Top" class="tooltip">Top</a>&middot;
+        <a href="index.php" title="Main Page" class="tooltip">Home</a>&middot;
+        <a href="password.php" title="Change current settings" class="tooltip">Ganti Password</a>&middot;
+        <a href="login.php?action=logout" title="End administrator session" class="tooltip">Logout</a>
     </p>
     <p class="mid">
         <!-- Change this to your own once purchased -->

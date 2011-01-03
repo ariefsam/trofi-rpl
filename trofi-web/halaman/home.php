@@ -1,9 +1,10 @@
 <?php
-    $tes = mysql_query("select * from halaman");
-    $v = mysql_num_rows($tes);
+    $tes = mysql_query("select * from halaman order by id desc");
     $halaman->header->judul = "Beranda : Trofi Webs";
-    $halaman->konten->isi[0] = new getsum(new artikel($v));
-    $halaman->konten->isi[1] = new getsum(new artikel($v-1));
+    $a = mysql_fetch_array($tes);
+    $halaman->konten->isi[0] = new getsum(new artikel($a[0]));
+    $a = mysql_fetch_array($tes);
+    $halaman->konten->isi[1] = new getsum(new artikel($a[0]));
     //$halaman->konten->isi[2] = new extrapanel();
     $halaman->footer->isi = "Design by Aloha";
 ?>

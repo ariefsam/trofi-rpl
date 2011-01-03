@@ -2,11 +2,14 @@
 session_start();
 require "fungsi.php";
 require "../dbconfig.php";
+if(loginkah()) header("Location: index.php");
 if($_GET['action']=='logout') session_destroy();
+//$login = 1;
 if($_POST['submit']){
     $login = login($_POST['username'], $_POST['password']);
-    if ($login) header("Location: index.php");
+    if ($login) {header("Location: index.php");}    
 }
+//if (!$login) $info = "salah";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -83,7 +86,7 @@ if($_POST['submit']){
 				
 				<div class="block_content">
 					
-					<div class="message info"><p>Just click login, this is an example.</p></div>
+					<?php if($info == "salah") {?> <div class="message warning"><p>username dan password tidak cocok</p></div> <?php }?>
 					
 					<form action="" method="post">
 						<p>
@@ -98,7 +101,7 @@ if($_POST['submit']){
 						
 						<p>
 							<input name="submit" type="submit" class="submit" value="Login" /> &nbsp;
-							<input type="checkbox" class="checkbox" checked="checked" id="rememberme" /> <label for="rememberme">Remember me</label>
+							
 						</p>
 					</form>
 					
