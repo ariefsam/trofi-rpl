@@ -20,7 +20,6 @@ require "class/forum.php";
 require "class/pagination.php";
 //require "class/faq.php";
 require "class/kebijakan_privasi.php";
-require "class/about.php";
 class database {
 
     public $queri;
