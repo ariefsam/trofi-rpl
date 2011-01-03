@@ -458,12 +458,12 @@ padding-left:30px;
 }
 .iklan{
     margin: 10px;
-    background-color: #B3D3E6;
+    background-color: #f2cc1c;
 }
 .iklan .judul{
-    background-color: #d80c36;
-    font-family: fantasy;
-    font-size: larger;
+    background-color: #87f561;
+    font-family: serif, arial;
+    font-size: 14pt;
     font-weight: bold;
     padding: 5px;
 }
@@ -471,32 +471,51 @@ padding-left:30px;
     font-size: medium;
 }
 .iklan .pengirim{
-
+font-style: italic;
 }
 .iklan .tanggal{
-    
+    margin: 10px;
+    font-size: 8pt;
+    font-style: italic;
+    display: inline-block;
 }
 .thread{
     background-color: bisque;
-    margin: 5px;    
+    margin: 5px;
     font-size: larger;
 }
 .thread .judul{
     padding: 10px;
-    background-color: #;
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: serif;
+    background-color: #f0b3e7;
 }
 
 .thread .pengirim{
     padding: 10px;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 10pt;
     background-color: bisque;
     display: inline-block;
 
 }
 .thread .tanggal{
     background-color: bisque;
+    font-size: 8pt;
+    font-style: italic;
     display: inline-block;
     height: 100%;
     float: right;
+
+}
+.thread .isi{
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 12pt;
 
 }
 /* === Pagination Nav === */
