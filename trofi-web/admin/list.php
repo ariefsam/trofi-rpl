@@ -7,7 +7,10 @@ require "header.php"
         ?>
 
 <div id="tabs-2">
-    <p>Daftar Artikel Terbaru</p>
+    
+    <h1>Daftar Artikel Terbaru</h1>
+
+    <p style="float: right"><a href="new_artikel.php">Tambah Artikel Baru</a></p>
     <table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
         <thead>
             <tr>

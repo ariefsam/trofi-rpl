@@ -40,9 +40,8 @@
                     <div class="meta">
                         <p>Selamat Datang Admin!</p>
                         <ul>
-                            <li><a href="login.php?action=logout" title="End administrator session" class="tooltip"><span class="ui-icon ui-icon-power"></span>Logout</a></li>
-                            <li><a href="" title="Change current settings" class="tooltip"><span class="ui-icon ui-icon-wrench"></span>Settings</a></li>
-                            <li><a href="" title="Go to your account" class="tooltip"><span class="ui-icon ui-icon-person"></span>My account</a></li>
+                            <li><a href="login.php?action=logout" title="Log keluar session Administrator" class="tooltip"><span class="ui-icon ui-icon-power"></span>Logout</a></li>
+                            
                         </ul>
                     </div>
                     <!-- End of Meta information -->

@@ -13,9 +13,7 @@ $kategori = get_semua_kategori();
     <!-- Tabs -->
     <div id="tabs">
         <ul>
-            <li><a href="">Forms Preview</a></li>
-            <li><a href="">Tables</a></li>
-            <li><a href="">Framework Icons &amp; Buttons</a></li>
+            <li><a href="#">Tambah Artikel Baru</a></li>
         </ul>
 
         <!-- First tab -->
@@ -54,7 +52,6 @@ $kategori = get_semua_kategori();
                     </p>
                     <p>
                         <input class="button" type="submit" value="Terbitkan" name="submit" />
-                        <input class="button" type="reset" value="Reset" />
                     </p>
                 </fieldset>
                 <!-- End of fieldset -->
