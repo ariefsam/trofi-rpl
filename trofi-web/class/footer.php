@@ -3,7 +3,7 @@ class footer{
     public $isi;
     public $link;
     function footer(){
-        $this->isi = "Trofi-Webs design by Aloha - <a href=\"#\">View our website</a>";
+        $this->isi = "Trofi-Webs design by Aloha - <a href=\"aloha.com\">View our website</a>";
     }
     function tampilkan(){?>
         <div class="clear"></div>

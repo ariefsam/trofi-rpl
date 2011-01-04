@@ -13,6 +13,7 @@ class member_area{
         $iklan = new tampilkan_iklan("member", $this->member->id, "Iklan " . $this->member->nama);
         ?>
 <h2>Profil</h2>
+<a href="?h=logout" style="float: right">Logout</a><br />
 <table>
     <tr>
         <td width="50px">Nama</td>
@@ -31,7 +32,7 @@ class member_area{
             <td>: <?php echo $this->member->no_hp?></td>
         </tr>
 </table>
-<a href="?h=logout">Logout</a><br />
+<br />
 <a href="?h=tambah_iklan">Tulis Iklan</a>
         <?php $iklan->tampilkan();?>
     <?php }

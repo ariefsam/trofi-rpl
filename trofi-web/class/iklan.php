@@ -80,17 +80,19 @@ while($q = mysql_fetch_array($queri)){
     <div class="isi">
         <?php echo $iklan->isi?>
     </div>
+    <br />
     <div class="pengirim">
         <?php echo $iklan->member->nama?>
     </div>
     <div class="date">
         <?php echo $iklan->tanggal?>
     </div>
+    <br /><br />
     <?php
     if($this->state=="member"){?>
-    <a onclick="hapus(<?php echo $iklan->id?>); return false;" href="#">Hapus Iklan</a>
+    <a onclick="hapus(<?php echo $iklan->id?>); return false;" href="#" style="float: right">Hapus Iklan</a>
     <br />
-    <a href="./?h=editiklan&id=<?php echo $iklan->id?>">Edit Iklan</a>
+    <a href="./?h=editiklan&id=<?php echo $iklan->id?>" style="padding-left: 15px;">Edit Iklan</a><br /><br />
     <?php }
     ?>
 </div>

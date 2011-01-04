@@ -58,6 +58,7 @@ class thread{
     <div class="isi">
         <?php echo $this->isi?>
     </div>
+    <br />
 </div>
 <?php
 $queri = mysql_fetch_array(mysql_query("SELECT count(id) FROM forum_content WHERE thread=" . $this->id));
@@ -88,6 +89,7 @@ foreach($x as $z){
     <div class="isi">
         <?php echo $balasan->isi?>
     </div>
+    <br />
 </div>
 <?php }
 }
@@ -124,8 +126,8 @@ class tampilan_forum{
         Judul Thread:<br /><br />
         <input type="text" name="judul" /><br /><br />
         Isi: <br /><br />
-        <textarea name="isi" cols="90" rows="40"></textarea>
-        <input type="submit" value="Kirim" />
+        <textarea name="isi" cols="70" rows="10"></textarea>
+        <p><input type="submit" value="Kirim" /></p>
     </form>
 </div>
     <?php }
